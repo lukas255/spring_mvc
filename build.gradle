@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    // mirror
+    maven {url "http://maven-internal.debln01.loc:8080/nexus/content/repositories/snapshots/"}
+    maven {url "http://maven-internal.debln01.loc:8080/nexus/content/repositories/releases/"}
+    maven {url "http://maven-internal.debln01.loc:8080/nexus/content/repositories/central/"}
+    maven {url "http://repo.maven.apache.org/maven2"}
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.5'
+    compile 'org.springframework:spring-webmvc:4.2.5.RELEASE'
+    compile 'javax.servlet:jstl:1.2'
+    
+    testCompile 'junit:junit:4.11'
+}
